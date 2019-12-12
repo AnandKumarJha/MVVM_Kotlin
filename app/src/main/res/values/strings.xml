@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MvvmKotlin</string>
+    <string name="space"> </string>
+</resources>

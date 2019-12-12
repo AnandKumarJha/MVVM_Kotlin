@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.example.mvvmkotlin.viewmodel.UserViewModel"/>
+        <variable name="myUserViewModel" type="UserViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <EditText
+                android:hint="Username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="@={myUserViewModel.user1.userName}"
+                android:ems="10"
+                android:id="@+id/editText" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
+                android:layout_marginTop="148dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.571"/>
+        <EditText
+                android:hint="Password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="@={myUserViewModel.user1.password}"
+                android:ems="10"
+                android:id="@+id/editText2" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
+                android:layout_marginTop="156dp"
+                app:layout_constraintTop_toBottomOf="@+id/editText"/>
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="120dp"
+                app:layout_constraintTop_toBottomOf="@+id/editText2" app:layout_constraintHorizontal_bias="0.498"
+                android:onClick="@{()->myUserViewModel.showToast()}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
